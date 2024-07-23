@@ -12,8 +12,14 @@ const dameCarta = () => {
   if (numero > 7) {
     numero = numero + 2;
   }
-
   muestraCarta(numero);
+
+  if(numero >= 10){
+    puntuacion += 0.5;
+  } else{
+    puntuacion += numero;
+  }
+  muestraPuntuacion()
 };
 
 const botonDameCarta = document.getElementById("dame-carta");
@@ -39,7 +45,6 @@ const muestraCarta = (carta: number): void => {
       imagenCarta.src =
         "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/4_cuatro-copas.jpg";
       break;
-
     case 5:
       imagenCarta.src = "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/5_cinco-copas.jpg";
       break;
