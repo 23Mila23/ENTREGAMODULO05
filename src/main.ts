@@ -84,7 +84,7 @@ const mePlanto = () => {
   if (puntuacion > 4) {
     mensaje = "Te ha entrado el canguelo eh";
   }
-  if (puntuacion >= 6 || puntuacion >= 7) {
+  if (puntuacion >= 6) {
     mensaje = "Casi casi...";
   }
   if (puntuacion == 7.5) {
@@ -92,6 +92,7 @@ const mePlanto = () => {
   }
   const getMePlanto = document.getElementById("mensaje") as HTMLElement;
   getMePlanto.innerHTML = mensaje;
+  showNuevaPartidaButton();
   botonDameCarta.disabled = true;
 };
 const botonPlantarse = document.getElementById(
@@ -112,7 +113,15 @@ const controlarGameOver = () => {
   if (puntuacion > puntuacionMaxima) {
     const getGameOver = document.getElementById("mensaje") as HTMLElement;
     getGameOver.innerHTML = gameOver;
+    showNuevaPartidaButton();
     botonDameCarta.disabled = true;
     botonPlantarse.disabled = true;
   }
+};
+
+const showNuevaPartidaButton = () => {
+  const nuevaPartidaPropierty = document.getElementById(
+    "nueva-partida"
+  ) as HTMLElement;
+  nuevaPartidaPropierty.classList.add("fadeIn");
 };

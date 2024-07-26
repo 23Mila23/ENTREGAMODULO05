@@ -4,23 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego siete y medio</title>
-    <link rel="stylesheet" src="style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <div class="game-container">
     <h1>JUEGO DE SIETE Y MEDIO</h1>
-    <div>
-      <p>Puntuación:</p>
-      <div id="puntuacion"></div>
-    </div>
+    <div id="buttons-container">
     <div>
       <button id="dame-carta">Dame Carta</button>
     </div>
     <div>
       <button id="plantarse">Plantarse</button>
     </div>
-    <div>
-      <button id="nueva-partida">Nueva Partida</button>
-    </div>
+  </div>
     <div id="cards-container">
       <img
         id="carta"
@@ -28,7 +24,17 @@
         alt="Carta"
       />
     </div>
-    <div id="mensaje"></div>
+    <div class="puntuacion-container">
+      <p>Puntuación:</p>
+      <div id="puntuacion">   
+      </div>
+      <div id="mensaje">
+      </div>
+    </div>
+    <div>
+      <button id="nueva-partida">Nueva Partida</button>
+    </div>
+  </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
