@@ -76,6 +76,11 @@ const muestraCarta = (carta: number): void => {
       break;
   }
 };
+
+const botonPlantarse = document.getElementById(
+  "plantarse"
+) as HTMLButtonElement;
+
 const mePlanto = () => {
   let mensaje = "";
   if (puntuacion <= 4) {
@@ -93,11 +98,11 @@ const mePlanto = () => {
   const getMePlanto = document.getElementById("mensaje") as HTMLElement;
   getMePlanto.innerHTML = mensaje;
   showNuevaPartidaButton();
+  showCuriosoButton();
   botonDameCarta.disabled = true;
+  botonPlantarse.disabled = true;
 };
-const botonPlantarse = document.getElementById(
-  "plantarse"
-) as HTMLButtonElement;
+
 botonPlantarse?.addEventListener("click", mePlanto);
 
 const nuevaPartida = () => {
@@ -120,8 +125,21 @@ const controlarGameOver = () => {
 };
 
 const showNuevaPartidaButton = () => {
-  const nuevaPartidaPropierty = document.getElementById(
+  const nuevaPartidaFadeIn = document.getElementById(
     "nueva-partida"
   ) as HTMLElement;
-  nuevaPartidaPropierty.classList.add("fadeIn");
+  nuevaPartidaFadeIn.classList.add("fadeIn");
 };
+
+const showCuriosoButton = () => {
+  const curiosoFadeIn = document.getElementById("curioso") as HTMLElement;
+  curiosoFadeIn.classList.add("fadeIn");
+};
+
+const gestionarCurioso = () => {
+  dameCarta();
+  botonCurioso.disabled = true;
+};
+
+const botonCurioso = document.getElementById("curioso") as HTMLButtonElement;
+botonCurioso?.addEventListener("click", gestionarCurioso);

@@ -8,33 +8,32 @@
   </head>
   <body>
     <div class="game-container">
-    <h1>JUEGO DE SIETE Y MEDIO</h1>
-    <div id="buttons-container">
-    <div>
-      <button id="dame-carta">Dame Carta</button>
-    </div>
-    <div>
-      <button id="plantarse">Plantarse</button>
-    </div>
-  </div>
-    <div id="cards-container">
-      <img
-        id="carta"
-        src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg"
-        alt="Carta"
-      />
-    </div>
-    <div class="puntuacion-container">
-      <p>Puntuación:</p>
-      <div id="puntuacion">   
+      <h1>JUEGO DE SIETE Y MEDIO</h1>
+      <div id="buttons-container">
+        <div>
+          <button id="dame-carta">Dame Carta</button>
+        </div>
+        <div>
+          <button id="plantarse">Plantarse</button>
+        </div>
       </div>
-      <div id="mensaje">
+      <div id="cards-container">
+        <img
+          id="carta"
+          src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg"
+          alt="Carta"
+        />
+      </div>
+      <div class="puntuacion-container">
+        <p>Puntuación:</p>
+        <div id="puntuacion"></div>
+        <div id="mensaje"></div>
+      </div>
+      <div id="nueva-partida-container">
+        <button id="nueva-partida">Nueva Partida</button>
+        <button id="curioso">¿Curioso?</button>
       </div>
     </div>
-    <div>
-      <button id="nueva-partida">Nueva Partida</button>
-    </div>
-  </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
