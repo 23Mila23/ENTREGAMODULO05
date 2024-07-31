@@ -1,6 +1,6 @@
-import { numeroCarta, reiniciarPuntuacion} from './modelo';
+import { reiniciarPuntuacion} from './modelo';
 
-import { calcularPuntuacion,  gestionarCurioso } from './motor';
+import { calcularYGuardarPuntuacion,  gestionarCurioso, getRandomNumber } from './motor';
 
 import {
   muestraPuntuacion,
@@ -20,18 +20,23 @@ import {
 
 document.addEventListener('DOMContentLoaded', muestraPuntuacion);
 
-const objetoIniciarPartida = {
- puntuacion:  0,
- imagenSrc : "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg",
- botonDameCarta : HTMLButtonElement,
- botonPlantarse,
- botonCurioso,
 
-}
+export const dameCarta = () => {
+  const randomNumber = getRandomNumber()
+  calcularYGuardarPuntuacion(randomNumber);
 
-const iniciarPartida = () => {
-  reiniciarPuntuacion(objetoIniciarPartida.puntuacion);
-  reiniciarCarta(objetoIniciarPartida.imagenSrc);
+  muestraCarta(randomNumber);
+
+  muestraPuntuacion();
+
+  ganarJuego();
+
+  controlarGameOver();
+};
+
+const reiniciarPartida = () => {
+  reiniciarPuntuacion();
+  reiniciarCarta();
   muestraPuntuacion();
   reiniciarGameOver();
   hideCuriosoButton();
@@ -41,22 +46,10 @@ const iniciarPartida = () => {
   botonCurioso.disabled = false;
 }
 
-export const dameCarta = () => {
-  calcularPuntuacion();
-
-  muestraCarta(numeroCarta);
-
-  muestraPuntuacion();
-
-  ganarJuego();
-
-  controlarGameOver();
-};
-
 botonDameCarta?.addEventListener('click', dameCarta);
 
 botonPlantarse?.addEventListener('click', mePlanto);
 
-botonNuevaPartida.addEventListener('click', iniciarPartida);
+botonNuevaPartida.addEventListener('click', reiniciarPartida);
 
 botonCurioso?.addEventListener('click', gestionarCurioso);

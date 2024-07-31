@@ -57,9 +57,9 @@ export const muestraCarta = (carta: number): void => {
   }
 };
 
-export const reiniciarCarta = (srcCarta : string) => {
+export const reiniciarCarta = () => {
   const imagenCarta = document.getElementById('carta') as HTMLImageElement;
-  imagenCarta.src = srcCarta;
+  imagenCarta.src = 'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg';
 }
 
 export const botonDameCarta = document.getElementById(

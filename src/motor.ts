@@ -1,20 +1,25 @@
-import { setPuntuacion, setNumeroCarta } from './modelo';
+import { setPuntuacion } from './modelo';
 
 import { dameCarta } from './main';
 
 import { botonCurioso } from './ui';
 
-export const calcularPuntuacion = () => {
+export const getRandomNumber = () => {
   let numero = Math.ceil(Math.random() * 10);
+
   if (numero > 7) {
     numero = numero + 2;
   }
-  if (numero >= 10) {
+
+  return numero;
+} 
+
+export const calcularYGuardarPuntuacion = (randomNumber: number) => {
+  if (randomNumber >= 10) {
     setPuntuacion(0.5);
   } else {
-    setPuntuacion(numero);
+    setPuntuacion(randomNumber);
   }
-  setNumeroCarta(numero);
 };
 
 export const gestionarCurioso = () => {
